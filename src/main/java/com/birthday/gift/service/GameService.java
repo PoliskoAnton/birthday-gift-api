@@ -18,9 +18,26 @@ public class GameService {
     private final GameSessionRepository repository;
     private final ApplicationContext applicationContext;
 
+    // In-memory flag for birthday page visibility (starts hidden)
+    private volatile boolean birthdayVisible = false;
+
     public GameService(GameSessionRepository repository, ApplicationContext applicationContext) {
         this.repository = repository;
         this.applicationContext = applicationContext;
+    }
+
+    /**
+     * Check if birthday page is visible.
+     */
+    public boolean isBirthdayVisible() {
+        return birthdayVisible;
+    }
+
+    /**
+     * Set birthday page visibility.
+     */
+    public void setBirthdayVisible(boolean visible) {
+        this.birthdayVisible = visible;
     }
 
     // Lazy load to avoid circular dependency

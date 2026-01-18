@@ -67,6 +67,12 @@ public class BirthdayBot extends TelegramLongPollingBot {
                     sendPendingRewards(chatId);
                 } else if (messageText.equals("/help")) {
                     sendHelpMessage(chatId);
+                } else if (messageText.equals("/showbirthday")) {
+                    handleShowBirthday(chatId);
+                } else if (messageText.equals("/hidebirthday")) {
+                    handleHideBirthday(chatId);
+                } else if (messageText.equals("/status")) {
+                    handleStatusCheck(chatId);
                 }
             }
         } catch (Exception e) {
@@ -188,6 +194,32 @@ public class BirthdayBot extends TelegramLongPollingBot {
         } catch (Exception e) {
             sendMessage(chatId, "❌ Error confirming reward: " + e.getMessage());
         }
+    }
+
+    private void handleShowBirthday(String chatId) {
+        // Only allow admin to control visibility
+        if (!chatId.equals(adminChatId)) {
+            sendMessage(chatId, "❌ You are not authorized to use this command.");
+            return;
+        }
+        gameService.setBirthdayVisible(true);
+        sendMessage(chatId, "🎂 *Birthday page is now VISIBLE!*\n\nUsers can now access the birthday page.");
+    }
+
+    private void handleHideBirthday(String chatId) {
+        // Only allow admin to control visibility
+        if (!chatId.equals(adminChatId)) {
+            sendMessage(chatId, "❌ You are not authorized to use this command.");
+            return;
+        }
+        gameService.setBirthdayVisible(false);
+        sendMessage(chatId, "🔒 *Birthday page is now HIDDEN!*\n\nUsers cannot access the birthday page.");
+    }
+
+    private void handleStatusCheck(String chatId) {
+        boolean visible = gameService.isBirthdayVisible();
+        String status = visible ? "🟢 VISIBLE" : "🔴 HIDDEN";
+        sendMessage(chatId, "*Birthday Page Status:* " + status + "\n\nUse /showbirthday or /hidebirthday to change.");
     }
 
     private void sendMessage(String chatId, String text) {

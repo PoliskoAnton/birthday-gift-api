@@ -106,4 +106,27 @@ public class GameController {
                 "service", "Birthday Gift API"
         ));
     }
+
+    /**
+     * Check if birthday page is visible.
+     */
+    @GetMapping("/birthday/visible")
+    public ResponseEntity<Map<String, Boolean>> isBirthdayVisible() {
+        return ResponseEntity.ok(Map.of(
+                "visible", gameService.isBirthdayVisible()
+        ));
+    }
+
+    /**
+     * Set birthday page visibility (admin endpoint).
+     */
+    @PostMapping("/birthday/visible")
+    public ResponseEntity<Map<String, Boolean>> setBirthdayVisible(
+            @RequestBody Map<String, Boolean> request) {
+        boolean visible = request.getOrDefault("visible", false);
+        gameService.setBirthdayVisible(visible);
+        return ResponseEntity.ok(Map.of(
+                "visible", visible
+        ));
+    }
 }
