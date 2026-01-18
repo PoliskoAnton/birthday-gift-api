@@ -1,0 +1,13 @@
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/controller/dto/RewardStatusResponse.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/repository/GameSessionRepository.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/controller/dto/ProgressResponse.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/telegram/TelegramBotConfig.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/service/GameService.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/BirthdayGiftApplication.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/controller/dto/GameCompleteRequest.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/telegram/BirthdayBot.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/model/GameSession.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/config/CorsConfig.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/model/GameType.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/controller/GameController.java
+/Users/antonwin/Downloads/FamelyDeal/birthday-backend/src/main/java/com/birthday/gift/model/RewardStatus.java
